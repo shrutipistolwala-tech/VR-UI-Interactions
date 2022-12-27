@@ -40,13 +40,29 @@ public class VideoController: MonoBehanviour {
 
     void onEnable() {
         video.errorReceived += errorReceived;
-        video.errorReceived += errorReceived;
-        video.errorReceived += errorReceived;
-        video.errorReceived += errorReceived;
-        video.errorReceived += errorReceived;
+        video.frameReady += frameReady;
+        video.loopPointReached += loopPointReached;
+        video.prepareCompleted += prepareCompleted;
+        video.seekCompleted += seekCompleted;
+        video.started += started;
 
     }
     void onDisable() {
+        video.errorReceived -= errorReceived;
+        video.frameReady -= frameReady;
+        video.loopPointReached -= loopPointReached;
+        video.prepareCompleted -= prepareCompleted;
+        video.seekCompleted -= seekCompleted;
+        video.started -= started;
 
     }
+    
+    void errorReceived(VideoPlayer v, string msg) {
+
+    }
+
+    void frameReady(VideoPlayer v, long, frame) {
+
+    }
+    void loopPointReached(VideoPlayer v)
 }
