@@ -3,7 +3,7 @@ using Valve.VR;
 using UnityEngine.Video;
 using UnityEngine.UI;
 
-public class VideoController: MonoBehanviour {
+public class VideoController: MonoBehaviour {
     public VideoPlayer video;
     public Slider slider;
 
@@ -19,15 +19,15 @@ public class VideoController: MonoBehanviour {
     }
 
     public bool IsPrepared {
-        get{ return video.IsPrepared; }
+        get{ return video.isPrepared; }
     }
 
     public bool IsDone {
-        get{ return video.isDone; }
+        get{ return isDone; }
     }
 
     public bool Time {
-        get{ return video.time; }
+        get{ video.time; }
     }
 
     public ulong Duration {
@@ -59,10 +59,35 @@ public class VideoController: MonoBehanviour {
     
     void errorReceived(VideoPlayer v, string msg) {
 
+        Debug.Log("video player error:" +msg);
+        isDone = true;
     }
 
-    void frameReady(VideoPlayer v, long, frame) {
+    void frameReady(VideoPlayer v, long frame) {
+
+        // Debug.Log("video player finished preparing");
+        // isDone = false;
 
     }
-    void loopPointReached(VideoPlayer v)
+
+    void loopPointReached(VideoPlayer v) {
+
+        Debug.Log("video player loop point reached");
+        isDone = true;
+
+    }
+
+    void prepareCompleted(VideoPlayer v) {
+
+        Debug.Log("video player finished preparing");
+        isDone = false;
+
+    }
+
+        void seekCompleted(VideoPlayer v) {
+
+        Debug.Log("video player finished seeking");
+        isDone = false;
+
+    }
 }
