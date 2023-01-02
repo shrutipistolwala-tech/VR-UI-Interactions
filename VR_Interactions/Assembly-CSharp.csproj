@@ -651,6 +651,10 @@
       <Project>{8D0F7440-3F96-2CA4-92C9-EDB713F55A96}</Project>
       <Name>SteamVR_Windows_EditorHelper</Name>
     </ProjectReference>
+    <ProjectReference Include="SteamVR_Actions.csproj">
+      <Project>{165FD951-EF2C-9D73-38A7-71A6278907F3}</Project>
+      <Name>SteamVR_Actions</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
