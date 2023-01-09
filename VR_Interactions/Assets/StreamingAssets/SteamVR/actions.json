@@ -6,7 +6,8 @@
     },
     {
       "name": "/actions/default/in/Grab",
-      "type": "boolean"
+      "type": "boolean",
+      "requirement": "suggested"
     },
     {
       "name": "/actions/default/in/SkeletonLeftHand",
